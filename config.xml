@@ -9,5 +9,5 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
-    <gap:plugin name="Device" value="org.apache.cordova.core.Device"/>
+    <gap:plugin name="Device" value="org.apache.cordova.core.Device" />
 </widget>
