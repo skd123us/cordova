@@ -1,41 +1,145 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    </body>
+<head>
+    <title>OfficeClip Mobile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/jquery.mobile-1.4.4.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="./js/frameworks/jquery-1.11.1.min.js"></script>
+    <script src="./js/frameworks/jquery.mobile-1.4.4.min.js"></script>
+    <script src="./js/index.js"></script>
+    
+   <style type="text/css">
+        .ui-state-disabled {
+            opacity: 0.3;
+        }
+    </style>
+    
+    <script type="text/javascript">
+
+	    function storeValues() {
+	        localStorage.setItem(
+                            "formTextUrl",
+                            $("#text-url").val());
+	        location.href = "#choose";
+	    }
+
+	    function signIn() {
+	        location.href = localStorage.formTextUrl;
+	    }
+
+	    function clearValues() {
+	        if (isStoragePopulated()) {
+	            localStorage.removeItem("formTextUrl");
+	        }
+	    }
+
+	    function isStoragePopulated() {
+	        return (localStorage.formTextUrl != null);
+	    }
+
+	    function populateFromStorage() {
+	        if (isStoragePopulated()) {
+	            $("#text-url").val(
+                                   localStorage.getItem("formTextUrl"));
+	        }
+	    }
+
+	    $(document).on("pagecreate", "#setUrl", function () {
+	        clearValues();
+	    });
+
+	    $(document).on("pagecreate", "#choose", function () {
+	    });
+
+	    $(document).on("pagecreate", "#opening", function () {
+	        if (isStoragePopulated()) {
+	            $.mobile.changePage("#choose");
+	        }
+	    });
+
+    </script>
+</head>
+<body>
+    <!-- -------------------------------------------------------------------------------------- -->
+    <div id="opening" data-role="page">
+        <div data-role="header">
+            <h1>OfficeClip</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <p>
+                OfficeClip Mobile provides smartphone access to its suite of business
+                software. OfficeClip is used by thousands of companies to manage contacts, customers, projects, timesheets, expenses, support issues and
+                invoices.
+            </p>
+            <p>
+                It integrates with Google Contacts, Google Calendar, Outlook, QuickBooks, Sage 50, ADP and
+                other systems.
+            </p>
+            <p>
+                It is available in two editions:
+                <ol>
+                    <li>Basic - Free for 10 users</li>
+                    <li>Enterprise - Has all the advanced features. See the <a href="http://www.officeclip.com/web/pricing/Main.html">feature page</a> for details.
+                </ol>
+            </p>
+        </div><!-- /content -->
+        <div data-role="footer">
+            <a href="#setUrl"
+               style="margin-right:10px;"
+               class="ui-btn ui-icon-arrow-r ui-corner-all ui-btn-icon-right ui-btn-right">Next</a>
+        </div><!-- /footer -->
+    </div><!-- /page -->
+    <!-- -------------------------------------------------------------------------------------------------- -->
+    <div id="choose" data-role="page">
+        <div data-role="header">
+            <h1>OfficeClip</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <a data-role="button"
+               onclick="signIn();"
+               class="ui-btn ui-corner-all">
+                Sign In
+            </a>
+            <a href="#setUrl"
+               class="ui-btn ui-corner-all">
+                Setup
+            </a>
+        </div><!-- /content -->
+    </div><!-- /page -->
+    <!-- -------------------------------------------------------------------------------------------------- -->
+    <div id="setUrl" data-role="page">
+        <div data-role="header">
+            <h1>OfficeClip</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <!-- <form id="formHaveAccount" method="post">-->
+            <label for="text-url">OfficeClip Url:</label>
+            <textarea cols="40"
+                      rows="2"
+                      name="text-url"
+                      id="text-url">
+                https://www.officeclip.com/mobile/default.aspx
+            </textarea>
+            <p>
+                To find your customized url:
+            </p>
+            <ol>
+                <li>Login to OfficeClip on a desktop browser</li>
+                <li>Click on the picture at top right</li>
+                <li>Click the Mobile button</li>
+            </ol>
+            <!-- </form> -->
+        </div><!-- /content -->
+        <div data-role="footer">
+            <a data-role="button"
+               onclick="storeValues();"
+               style="margin-right:10px;"
+               class="ui-btn ui-icon-arrow-r ui-corner-all ui-btn-icon-right ui-btn-right">
+                Submit
+            </a>
+        </div><!-- /footer -->
+    </div><!-- /page -->
+</body>
 </html>
