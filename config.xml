@@ -13,6 +13,5 @@
         OfficeClip Cordova
     </author>
     <content src="index.html" />
-    <access origin="*" />
-    <gap:plugin name="Device" value="org.apache.cordova.core.Device" />
+    <access origin="*" />    
 </widget>
