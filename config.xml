@@ -13,5 +13,6 @@
         OfficeClip Cordova
     </author>
     <content src="index.html" />
-    <access origin="*" />    
+    <access origin="*" />
+    <gap:plugin name="org.apache.cordova.device" />
 </widget>
