@@ -5,14 +5,17 @@
         xmlns="http://www.w3.org/ns/widgets" 
         xmlns:gap = "http://phonegap.com/ns/1.0"
         xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>officeclip</name>
+    <name>OfficeClip</name>
     <description>
-        OfficeClip cordova implementation.
+        OfficeClip mobile implementation.
     </description>
     <author email="skdutta@gmail.com" href="http://officeclip.com">
-        OfficeClip Cordova
+        OfficeClip Mobile
     </author>
     <content src="index.html" />
     <access origin="*" />
+	<!-- All the Icons -->
+	<icon src="img/logoShort.png" />
+	<!-- All PlugIns -->
     <gap:plugin name="org.apache.cordova.device" />
 </widget>
