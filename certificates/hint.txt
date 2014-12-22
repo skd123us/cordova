@@ -1,6 +1,0 @@
-oc-android-app-release-key.keystore:
-	alias: oc_android
-	password: certificate does not have @
-
-OfficeClip.Android.20141222.keystore
-	alias: key-20141222
