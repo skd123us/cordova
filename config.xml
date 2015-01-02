@@ -15,7 +15,7 @@
     <content src="index.html" />
     <access origin="*" />
 	<!-- All the Icons -->
-	<icon src="img/logoShort.png" />
+	<icon src="icon.png" />
 	<!-- All PlugIns -->
     <gap:plugin name="org.apache.cordova.device" />
 </widget>
