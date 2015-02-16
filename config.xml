@@ -14,8 +14,85 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
-	<!-- All the Icons -->
+	<!-- ****************  All the Icons *************** -->
+	<!-- Icons Specs From: http://docs.build.phonegap.com/en_US/3.3.0/configuring_icons_and_splash.md.html#Icons%20and%20Splash%20Screens -->
+
+	<!-- *** Default Icon *** -->
 	<icon src="icon.png" />
+
+	<!-- *** ios 7.0+ icons *** -->
+	<!-- iPhone / iPod Touch  -->
+	<icon src="res/icon/ios/ios7Plus/60.png" gap:platform="ios" width="60" height="60" />
+	<icon src="res/icon/ios/ios7Plus/120.png" gap:platform="ios" width="120" height="120" />
+
+	<!-- iPad -->
+	<icon src="res/icon/ios/ios7Plus/76.png" gap:platform="ios" width="76" height="76" />
+	<icon src="res/icon/ios/ios7Plus/152.png" gap:platform="ios" width="152" height="152" />
+
+	<!-- Settings Icon -->
+	<icon src="res/icon/ios/29.png" gap:platform="ios" width="29" height="29" />
+	<icon src="res/icon/ios/58.png" gap:platform="ios" width="58" height="58" />
+
+	<!-- Spotlight Icon -->
+	<icon src="res/icon/ios/ios7Plus/40.png" gap:platform="ios" width="40" height="40" />
+	<icon src="res/icon/ios/ios7Plus/80.png" gap:platform="ios" width="80" height="80" />
+	
+	<!-- *** ios 6.1 icons *** -->
+	<!-- iPhone / iPod Touch -->
+	<icon src="res/icon/ios/57.png" gap:platform="ios" width="57" height="57" />
+	<icon src="res/icon/ios/114.png" gap:platform="ios" width="114" height="114" />
+
+	<!-- iPad -->
+	<icon src="res/icon/ios/72.png" gap:platform="ios" width="72" height="72" />
+	<icon src="res/icon/ios/144.png" gap:platform="ios" width="144" height="144" />
+
+	<!-- iPhone Spotlight and Settings Icon -->
+	<icon src="res/icon/ios/29.png" gap:platform="ios" width="29" height="29" />
+	<icon src="res/icon/ios/58.png" gap:platform="ios" width="58" height="58" />
+
+	<!-- iPad Spotlight and Settings Icon -->
+	<icon src="res/icon/ios/ios6/50.png" gap:platform="ios" width="50" height="50" />
+	<icon src="res/icon/ios/ios6/100.png" gap:platform="ios" width="100" height="100" />
+	
+	<!-- *** Android icons *** -->
+	<icon src="res/icon/android/ldpi_36.png" gap:platform="android" gap:qualifier="ldpi" />
+	<icon src="res/icon/android/mdpi_48.png" gap:platform="android" gap:qualifier="mdpi" />
+	<icon src="res/icon/android/hdpi_72.png" gap:platform="android" gap:qualifier="hdpi" />
+	<icon src="res/icon/android/xhdpi_96.png" gap:platform="android" gap:qualifier="xhdpi" />
+	<icon src="res/icon/android/xxhdpi_144.png" gap:platform="android" gap:qualifier="xxhdpi" />
+	<icon src="res/icon/android/xxxhdpi_192.png" gap:platform="android" gap:qualifier="xxxhdpi" />
+	
+	<!-- ****************  All the Splash Screens *************** -->
+	<!-- Icons Specs From: http://docs.build.phonegap.com/en_US/3.3.0/configuring_icons_and_splash.md.html#Icons%20and%20Splash%20Screens -->
+
+	<!-- Default splash screen -->
+	<gap:splash src="splash.png" />
+	
+	<!-- *** ios splash screens *** -->
+	<!-- iPhone and iPod touch -->
+	<gap:splash src="res/splashscreen/ios/320x480.jpg" gap:platform="ios" width="320" height="480" />
+	<gap:splash src="res/splashscreen/ios/640x960.jpg" gap:platform="ios" width="640" height="960" />
+
+	<!-- iPhone 5 / iPod Touch (5th Generation) -->
+	<gap:splash src="res/splashscreen/ios/640x1136.jpg" gap:platform="ios" width="640" height="1136" />
+
+	<!-- iPad -->
+	<gap:splash src="res/splashscreen/ios/768x1024.jpg" gap:platform="ios" width="768" height="1024" />
+	<gap:splash src="res/splashscreen/ios/1024x768.jpg" gap:platform="ios" width="1024" height="768" />
+
+	<!-- Retina iPad -->
+	<gap:splash src="res/splashscreen/ios/1536x2048.jpg" gap:platform="ios" width="1536" height="2048" />
+	<gap:splash src="res/splashscreen/ios/2048x1536.jpg" gap:platform="ios" width="2048" height="1536" />
+	
+	<!-- *** android splash screens *** -->
+	<gap:splash src="res/splashscreen/android/ldpi_240x320.png" gap:platform="android" gap:qualifier="ldpi" />
+	<gap:splash src="res/splashscreen/android/mdpi_320x480.png" gap:platform="android" gap:qualifier="mdpi" />
+	<gap:splash src="res/splashscreen/android/hdpi_480x800.png" gap:platform="android" gap:qualifier="hdpi" />
+	<gap:splash src="res/splashscreen/android/xhdpi_640x960.png" gap:platform="android" gap:qualifier="xhdpi" />
+	
+	<!-- *** Windows Phone Splash screen -->
+	<gap:splash src="res/splashscreen/android-window/480x800.jpg" gap:platform="winphone" />
+	
 	<!-- All PlugIns -->
     <gap:plugin name="org.apache.cordova.device" />
 </widget>
