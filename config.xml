@@ -103,4 +103,6 @@
 	
 	<!-- All PlugIns -->
     <gap:plugin name="org.apache.cordova.device" />
+	<plugin name="cordova-plugin-whitelist" spec="~1.2.0" />
+	<allow-navigation href="https://www.officeclip.com/*" />
 </widget>
